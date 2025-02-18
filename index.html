@@ -3,165 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rudra P - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        body {
-            background: #0a0a0a;
-            color: #fff;
-            min-height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: transparent;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            border-radius: 50%;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 6.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #ffffff, #f8f9fa, #dee2e6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -2px;
-            animation: gradient 8s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        p {
-            font-size: 1.5rem;
-            color: #888;
-            margin-bottom: 2rem;
-        }
-
-        .waves {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-        }
-
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23222" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,197.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            animation: wave 20s linear infinite;
-            opacity: 0.3;
-        }
-
-        .wave:nth-child(2) {
-            bottom: 10px;
-            opacity: 0.5;
-            animation: wave 15s linear infinite reverse;
-        }
-
-        .wave:nth-child(3) {
-            bottom: 20px;
-            opacity: 0.2;
-            animation: wave 18s linear infinite;
-        }
-
-        @keyframes wave {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-50%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #fff;
-        }
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <title>Rudra P - Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="stars" id="stars"></div>
-    <div class="container">
-        <h1>Rudra P</h1>
-        <p>Portfolio Coming Soon</p>
-        <div class="social-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
+    <!-- Only stars will be injected by JavaScript -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">RP</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
-    </div>
-    <div class="waves">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div>
-    <script>
-        // Create starry background
-        const starsContainer = document.getElementById('stars');
-        const numberOfStars = 100;
+    </nav>
 
-        for (let i = 0; i < numberOfStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.animation = `twinkle ${2 + Math.random() * 3}s infinite ${Math.random() * 2}s`;
-            starsContainer.appendChild(star);
-        }
-    </script>
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Rudra P</h1>
+                <p class="subtitle">Student Developer</p>
+                <p class="description">Passionate about coding and building creative solutions. Currently exploring web development, automation, and learning new technologies.</p>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="cta">
+                    <a href="#work" class="btn primary">View Work</a>
+                    <a href="#contact" class="btn secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Simply Code Website -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-globe project-icon"></i>
+                            <div class="project-links">
+                                <a href="https://wesimplycode.org" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Simply Code Website</h3>
+                        <p class="project-description">Official website for Simply Code, showcasing our mission, programs, and impact in computer science education.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>Javascript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- BudgetWise -->
+                 <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-piggy-bank project-icon"></i>
+                            <div class="project-links">
+                                <a href="https://budgetwise.live" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Budget Wise</h3>
+                        <p class="project-description">Making financial education accessible and engaging for young adults. Features interactive learning modules and practical tools.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-node"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="nextjs-icon">N</i>
+                                <span>Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Simply Code Hour Logger -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-clock project-icon"></i>
+                            <div class="project-links">
+                                <i class="fas fa-lock" style="color: var(--text-secondary); margin-right: 8px;"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Private Project</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Hour Logger System</h3>
+                        <p class="project-description">Volunteer hour tracking system for Simply Code mentors and teachers, with automated verification and reporting.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="nextjs-icon">N</i>
+                                <span>Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simply Code Onboarding -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-user-plus project-icon"></i>
+                            <div class="project-links">
+                                <i class="fas fa-lock" style="color: var(--text-secondary); margin-right: 8px;"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Private Project</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Onboarding System</h3>
+                        <p class="project-description">Secure onboarding platform for Simply Code volunteers and students. Includes role-based access control and automated workflows.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="nextjs-icon">N</i>
+                                <span>Next.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <!-- Fun Projects Section -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-calculator project-icon"></i>
+                            <div class="project-links">
+                                <a href="https://coolgpacalculator.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">GPA Calculator</h3>
+                        <p class="project-description">Simple and intuitive GPA calculator with course weighting and grade prediction features.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>Javascript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WPM Speed Test -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-keyboard project-icon"></i>
+                            <div class="project-links">
+                                <a href="https://wpmspeedtest.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">WPM Speed Test</h3>
+                        <p class="project-description">Test and improve your typing speed with this clean, minimalist typing speed calculator.</p>
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js-square"></i>
+                                <span>Javascript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="nextjs-icon">N</i>
+                            <span>Next.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-description">
+                I'm currently open to new opportunities and collaborations. 
+                Whether you have a question or just want to say hi, feel free to reach out!
+            </p>
+            <div class="contact-content">
+                <a href="mailto:hello@rudrapandit.com" class="email-link">
+                    hello@rudrapandit.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your sections with similar clean structure -->
 </body>
+<script src="/script.js"></script>
 </html>
