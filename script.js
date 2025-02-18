@@ -43,6 +43,23 @@ function createStars() {
     }
 }
 
+// Project previews data
+const projectPreviews = {
+    'hour-logger': {
+        title: 'Hour Logger System',
+        description: 'Volunteer hour tracking system for Simply Code volunteers, with manual admin approval.',
+        images: [
+            '/images/1.png',
+            '/images/2.png',
+            '/images/4.png',
+            '/images/5.png',
+
+
+        ]
+    }
+    // Add more projects as needed
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     createBackground();
@@ -67,4 +84,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const modal = document.getElementById('projectModal');
+    const modalClose = modal.querySelector('.modal-close');
+    const previewButtons = document.querySelectorAll('.project-preview');
+    
+    let currentSlide = 0;
+    
+    function showSlide(index, images) {
+        const items = modal.querySelectorAll('.carousel-item');
+        items.forEach(item => item.classList.remove('active'));
+        items[index].classList.add('active');
+    }
+    
+    function openModal(projectId) {
+        const project = projectPreviews[projectId];
+        if (!project) return;
+        
+        // Update modal content
+        modal.querySelector('.project-title').textContent = project.title;
+        modal.querySelector('.project-description').textContent = project.description;
+        
+        // Create carousel items
+        const carouselContainer = modal.querySelector('.carousel-items');
+        carouselContainer.innerHTML = project.images
+            .map(src => `<div class="carousel-item"><img src="${src}" alt="Project preview"></div>`)
+            .join('');
+            
+        // Show first slide
+        currentSlide = 0;
+        showSlide(currentSlide, project.images);
+        
+        // Show modal
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
+    
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+    }
+    
+    // Event listeners
+    previewButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const projectId = button.closest('.project-card').dataset.project;
+            openModal(projectId);
+        });
+    });
+    
+    modalClose.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    
+    // Carousel navigation
+    const prevButton = modal.querySelector('.prev');
+    const nextButton = modal.querySelector('.next');
+    
+    prevButton.addEventListener('click', () => {
+        const items = modal.querySelectorAll('.carousel-item');
+        currentSlide = (currentSlide - 1 + items.length) % items.length;
+        showSlide(currentSlide);
+    });
+    
+    nextButton.addEventListener('click', () => {
+        const items = modal.querySelectorAll('.carousel-item');
+        currentSlide = (currentSlide + 1) % items.length;
+        showSlide(currentSlide);
+    });
 });

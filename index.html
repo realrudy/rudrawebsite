@@ -14,6 +14,7 @@
         <div class="container nav-content">
             <div class="logo">RP</div>
             <div class="nav-links">
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#work">Work</a>
                 <a href="#skills">Skills</a>
@@ -29,12 +30,44 @@
                 <p class="subtitle">Student Developer</p>
                 <p class="description">Passionate about coding and building creative solutions. Currently exploring web development, automation, and learning new technologies.</p>
                 <div class="social-links">
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/realrudy/" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rudra-p-167355302/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="cta">
                     <a href="#work" class="btn primary">View Work</a>
                     <a href="#contact" class="btn secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a high school student passionate about software development and creating impactful solutions. Currently focused on web development and building tools that make a difference.</p>
+                    
+                    <p>As the tech lead at Simply Code, I work on developing educational platforms and tools to help students learn programming. I believe in making technology education accessible to everyone.</p>
+                    
+                    <p>My journey in programming started with simple Python scripts, and now I'm building full-stack applications using modern technologies like React, Next.js, and Node.js.</p>
+                    
+                    <div class="quick-info">
+                        <div class="info-item">
+                            <i class="fas fa-code"></i>
+                            <span>5+ years of coding experience</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>50+ students reached through projects</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>20+ micro projects completed</span>
+                        </div>
+                    </div>
+
+                    <p class="about-cta">I am currently exploring opportunities in web development and open to collaborations on interesting projects.</p>
                 </div>
             </div>
         </div>
@@ -101,13 +134,13 @@
                 </div>
                 
                 <!-- Simply Code Hour Logger -->
-                <div class="project-card">
+                <div class="project-card" data-project="hour-logger">
                     <div class="project-content">
                         <div class="project-header">
                             <i class="fas fa-clock project-icon"></i>
                             <div class="project-links">
-                                <i class="fas fa-lock" style="color: var(--text-secondary); margin-right: 8px;"></i>
-                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Private Project</span>
+                                <span class="preview-text">Preview Available</span>
+                                <i class="fas fa-external-link-alt project-preview"></i>
                             </div>
                         </div>
                         <h3 class="project-title">Hour Logger System</h3>
@@ -258,7 +291,7 @@
                         </div>
                         <div class="skill-item">
                             <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
+                            <span>CSS</span>
                         </div>
                     </div>
                 </div>
@@ -300,7 +333,24 @@
         </div>
     </section>
 
-    <!-- Rest of your sections with similar clean structure -->
+    <!-- Modal Template -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <i class="fas fa-times modal-close"></i>
+            <h3 class="project-title"></h3>
+            <div class="carousel">
+                <div class="carousel-items">
+                    <!-- Images will be inserted here by JavaScript -->
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <p class="project-description"></p>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
 </body>
-<script src="/script.js"></script>
 </html>
