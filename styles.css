@@ -565,8 +565,8 @@ h2::after {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
 }
 
@@ -583,6 +583,28 @@ h2::after {
     border-color: var(--card-hover-border);
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 15px 35px -15px rgba(100, 255, 218, 0.15);
+}
+
+/* WIP Badge Styling */
+.wip-badge {
+    display: inline-block;
+    background: rgba(100, 255, 218, 0.15);
+    color: var(--accent);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    margin-left: 0.6rem;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.wip-card:hover .wip-badge {
+    background: rgba(100, 255, 218, 0.2);
+    border-color: rgba(100, 255, 218, 0.5);
 }
 
 .project-header {
