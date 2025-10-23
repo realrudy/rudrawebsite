@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spaceship-container">
+            <div class="spaceship">
+                <div class="ship-body"></div>
+                <div class="ship-window"></div>
+                <div class="ship-wing ship-wing-left"></div>
+                <div class="ship-wing ship-wing-right"></div>
+                <div class="ship-flame">
+                    <div class="flame flame-1"></div>
+                    <div class="flame flame-2"></div>
+                    <div class="flame flame-3"></div>
+                </div>
+            </div>
+            <div class="planet"></div>
+            <div class="stars-trail"></div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="loading-text">
+                <span class="loading-percentage">0%</span>
+                <span class="loading-status">Initializing...</span>
+            </p>
+        </div>
+    </div>
+
     <!-- Only stars will be injected by JavaScript -->
     <nav>
         <div class="container nav-content">
@@ -16,7 +42,7 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#work">Work</a>
+                <a href="#work">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -27,34 +53,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="flip-name">
-                    <span class="letter-container">
-                        <span class="letter front">R</span>
-                        <span class="letter back">R</span>
-                    </span>
-                    <span class="letter-container">
-                        <span class="letter front">u</span>
-                        <span class="letter back">u</span>
-                    </span>
-                    <span class="letter-container">
-                        <span class="letter front">d</span>
-                        <span class="letter back">d</span>
-                    </span>
-                    <span class="letter-container">
-                        <span class="letter front">r</span>
-                        <span class="letter back">y</span>
-                    </span>
-                    <span class="letter-container">
-                        <span class="letter front">a</span>
-                        <span class="letter back"></span>
-                    </span>
-                    <span class="letter-container space">
-                        <span class="letter front">&nbsp;</span>
-                        <span class="letter back"></span>
-                    </span>
-                    <span class="letter-container">
-                        <span class="letter front">P</span>
-                        <span class="letter back"></span>
-                    </span>
+                    Rudra P
                 </h1>
                 <p class="subtitle">Student Developer</p>
                 <p class="description">Passionate about exploring new technologies and coding :)</p>
@@ -103,7 +102,7 @@
 
     <section id="work">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2>Project Portfolio</h2>
             <div class="projects-grid">
        <div class="project-card">
                     <div class="project-content">
@@ -397,6 +396,18 @@
                         <div class="skill-item">
                             <i class="fab fa-git-alt"></i>
                             <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-linux"></i>
+                            <span>Kali Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Ethical Hacking</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>DNS/Domain Control</span>
                         </div>
                     </div>
                 </div>

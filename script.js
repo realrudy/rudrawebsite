@@ -1,3 +1,61 @@
+// Preloader
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    const percentage = document.querySelector('.loading-percentage');
+    const status = document.querySelector('.loading-status');
+    
+    // Simulate loading progress with random milestones
+    let progress = 1;
+    percentage.textContent = '1%';
+    
+    const messages = [
+        'Initializing...',
+        'Loading assets...',
+        'Preparing experience...',
+        'Almost ready...',
+        'Launch complete!'
+    ];
+    
+    // Generate random milestones between 1 and 100
+    const milestones = [1];
+    for (let i = 0; i < 8; i++) {
+        milestones.push(Math.floor(Math.random() * 85) + 10);
+    }
+    milestones.push(100);
+    milestones.sort((a, b) => a - b);
+    
+    let currentMilestone = 0;
+    
+    const interval = setInterval(() => {
+        if (currentMilestone < milestones.length - 1) {
+            currentMilestone++;
+            progress = milestones[currentMilestone];
+            percentage.textContent = progress + '%';
+            
+            // Update status message based on progress
+            if (progress < 25) status.textContent = messages[0];
+            else if (progress < 50) status.textContent = messages[1];
+            else if (progress < 75) status.textContent = messages[2];
+            else if (progress < 100) status.textContent = messages[3];
+            else status.textContent = messages[4];
+        }
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            
+            // Hide preloader after completion
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    preloader.remove();
+                }, 500);
+            }, 800);
+        }
+    }, 180);
+});
+
 function createBackground() {
     // Create gradient mesh
     const mesh = document.createElement('div');
