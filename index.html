@@ -4,36 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rudra P (Rudy) - Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spaceship-container">
-            <div class="spaceship">
-                <div class="ship-body"></div>
-                <div class="ship-window"></div>
-                <div class="ship-wing ship-wing-left"></div>
-                <div class="ship-wing ship-wing-right"></div>
-                <div class="ship-flame">
-                    <div class="flame flame-1"></div>
-                    <div class="flame flame-2"></div>
-                    <div class="flame flame-3"></div>
-                </div>
+    <!-- Gate Screen -->
+    <div id="gate" aria-hidden="false">
+        <div class="gate-card">
+            <h1>Hi, I'm Rudy</h1>
+            <p>This website is currently under development. If you believe you should have access please reach out to me below:</p>
+            <div class="gate-contact">
+                <a class="btn primary" href="mailto:hello@rudrapandit.com">hello@rudrapandit.com</a>
             </div>
-            <div class="planet"></div>
-            <div class="stars-trail"></div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-            <p class="loading-text">
-                <span class="loading-percentage">0%</span>
-                <span class="loading-status">Initializing...</span>
-            </p>
+            
         </div>
     </div>
+
+    <!-- Main Site Content Wrapper -->
+    <div id="site-content">
 
     <!-- Only stars will be injected by JavaScript -->
     <nav>
@@ -482,6 +471,8 @@
             </div>
         </div>
     </section>
+
+    </div><!-- /#site-content -->
 
     <!-- Modal Template -->
     <div class="modal" id="projectModal">

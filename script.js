@@ -1,60 +1,42 @@
-// Preloader
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    const percentage = document.querySelector('.loading-percentage');
-    const status = document.querySelector('.loading-status');
-    
-    // Simulate loading progress with random milestones
-    let progress = 1;
-    percentage.textContent = '1%';
-    
-    const messages = [
-        'Initializing...',
-        'Loading assets...',
-        'Preparing experience...',
-        'Almost ready...',
-        'Launch complete!'
-    ];
-    
-    // Generate random milestones between 1 and 100
-    const milestones = [1];
-    for (let i = 0; i < 8; i++) {
-        milestones.push(Math.floor(Math.random() * 85) + 10);
+// Access Gate: show full site only with ?key=1
+// Gate access: ensure robust unlock with query or stored flag
+(function gateAccess() {
+    const unlock = () => {
+        const body = document.body;
+        const gate = document.getElementById('gate');
+        const site = document.getElementById('site-content');
+        body.classList.add('site-visible');
+        if (gate) gate.classList.add('gate-hidden');
+        if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+        if (site) site.style.display = 'block';
+    };
+
+    const lock = () => {
+        const body = document.body;
+        const gate = document.getElementById('gate');
+        const site = document.getElementById('site-content');
+        body.classList.remove('site-visible');
+        if (gate) gate.classList.remove('gate-hidden');
+        if (site) site.style.display = '';
+    };
+
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const hasKey = params.get('key') === '1';
+        const stored = window.localStorage && localStorage.getItem('rudy_site_unlock') === '1';
+
+        if (hasKey) {
+            if (window.localStorage) localStorage.setItem('rudy_site_unlock', '1');
+            unlock();
+        } else if (stored) {
+            unlock();
+        } else {
+            lock();
+        }
+    } catch (e) {
+        lock();
     }
-    milestones.push(100);
-    milestones.sort((a, b) => a - b);
-    
-    let currentMilestone = 0;
-    
-    const interval = setInterval(() => {
-        if (currentMilestone < milestones.length - 1) {
-            currentMilestone++;
-            progress = milestones[currentMilestone];
-            percentage.textContent = progress + '%';
-            
-            // Update status message based on progress
-            if (progress < 25) status.textContent = messages[0];
-            else if (progress < 50) status.textContent = messages[1];
-            else if (progress < 75) status.textContent = messages[2];
-            else if (progress < 100) status.textContent = messages[3];
-            else status.textContent = messages[4];
-        }
-        
-        if (progress >= 100) {
-            clearInterval(interval);
-            
-            // Hide preloader after completion
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                
-                // Remove from DOM after transition
-                setTimeout(() => {
-                    preloader.remove();
-                }, 500);
-            }, 800);
-        }
-    }, 180);
-});
+})();
 
 function createBackground() {
     // Create gradient mesh
@@ -63,33 +45,20 @@ function createBackground() {
     document.body.prepend(mesh);
 
     // Create floating glow spots with varied sizes and positions
-    const spots = 4; // Increased number of spots
+    const spots = 1; // reduced for subtlety
     for (let i = 0; i < spots; i++) {
         const spot = document.createElement('div');
         spot.className = 'glow-spot';
         
         // Strategic placement for better visual effect
-        if (i === 0) {
-            // Top left area
-            spot.style.left = `${Math.random() * 30}%`;
-            spot.style.top = `${Math.random() * 30}%`;
-            spot.style.width = '600px';
-            spot.style.height = '600px';
-        } else if (i === 1) {
-            // Bottom right area
-            spot.style.left = `${70 + Math.random() * 30}%`;
-            spot.style.top = `${70 + Math.random() * 30}%`;
-            spot.style.width = '500px';
-            spot.style.height = '500px';
-        } else {
-            // Random positioning for remaining spots
-            spot.style.left = `${20 + Math.random() * 60}%`;
-            spot.style.top = `${20 + Math.random() * 60}%`;
-            spot.style.width = `${400 + Math.random() * 200}px`;
-            spot.style.height = spot.style.width;
-        }
-        
-        spot.style.animationDelay = `${i * -5}s`; // Spread out the animation timing
+        // Subtle placement and small size for professional look
+        spot.style.left = `${20 + Math.random() * 60}%`;
+        spot.style.top = `${20 + Math.random() * 60}%`;
+        const smallSize = 220 + Math.random() * 80;
+        spot.style.width = `${smallSize}px`;
+        spot.style.height = `${smallSize}px`;
+        spot.style.opacity = '0.12';
+        spot.style.animationDelay = `${i * -3}s`;
         document.body.prepend(spot);
     }
 }
@@ -99,7 +68,7 @@ function createStars() {
     container.className = 'stars';
     document.body.prepend(container);
 
-    const starCount = 180; // Increased star count
+    const starCount = 30; // reduced for subtlety
     
     // Create a variety of stars with different sizes and brightness
     for (let i = 0; i < starCount; i++) {
@@ -108,10 +77,10 @@ function createStars() {
         
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const size = Math.random() * 2 + 1; // Vary star size between 1-3px
-        const opacity = Math.random() * 0.5 + 0.5; // Vary star brightness
-        const duration = 2 + Math.random() * 4; // Longer animation duration range
-        const delay = Math.random() * 3; // Longer delay for more random effect
+        const size = Math.random() * 1 + 0.8; // smaller stars
+        const opacity = Math.random() * 0.25 + 0.25; // subtler brightness
+        const duration = 3 + Math.random() * 3;
+        const delay = Math.random() * 1.5;
         
         Object.assign(star.style, {
             left: `${x}%`,
@@ -120,7 +89,8 @@ function createStars() {
             height: `${size}px`,
             opacity: opacity,
             animation: `twinkle ${duration}s ease-in-out infinite`,
-            animationDelay: `${delay}s`
+            animationDelay: `${delay}s`,
+            background: 'rgba(255,255,255,0.85)'
         });
         
         container.appendChild(star);
