@@ -1,43 +1,3 @@
-// Access Gate: show full site only with ?key=1
-// Gate access: ensure robust unlock with query or stored flag
-(function gateAccess() {
-    const unlock = () => {
-        const body = document.body;
-        const gate = document.getElementById('gate');
-        const site = document.getElementById('site-content');
-        body.classList.add('site-visible');
-        if (gate) gate.classList.add('gate-hidden');
-        if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
-        if (site) site.style.display = 'block';
-    };
-
-    const lock = () => {
-        const body = document.body;
-        const gate = document.getElementById('gate');
-        const site = document.getElementById('site-content');
-        body.classList.remove('site-visible');
-        if (gate) gate.classList.remove('gate-hidden');
-        if (site) site.style.display = '';
-    };
-
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const hasKey = params.get('key') === '1';
-        const stored = window.localStorage && localStorage.getItem('rudy_site_unlock') === '1';
-
-        if (hasKey) {
-            if (window.localStorage) localStorage.setItem('rudy_site_unlock', '1');
-            unlock();
-        } else if (stored) {
-            unlock();
-        } else {
-            lock();
-        }
-    } catch (e) {
-        lock();
-    }
-})();
-
 function createBackground() {
     // Create gradient mesh
     const mesh = document.createElement('div');
@@ -130,13 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Handle navbar scroll effect
     const navbar = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
+    const updateNavbarState = () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+    };
+
+    updateNavbarState();
+    window.addEventListener('scroll', updateNavbarState, { passive: true });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
