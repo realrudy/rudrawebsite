@@ -1,0 +1,78 @@
+.page {
+  --test-bg: #0b0f14;
+  --test-panel: #111820;
+  --test-text: #f0f6fa;
+  --test-muted: #93a3b2;
+  --test-faint: #53616d;
+  --test-accent: #5ea6c9;
+  --test-warm: #f8d98a;
+  min-height: 100vh;
+  background: var(--test-bg);
+  color: var(--test-text);
+  font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+.page :global(section) { min-height: 0; padding: 0; display: block; align-items: initial; }
+.page :global(h1), .page :global(h2), .page :global(h3), .page :global(p) { font-family: inherit; background: none; -webkit-text-fill-color: currentColor; }
+.page :global(h1), .page :global(h2), .logo { font-family: "Plus Jakarta Sans", "Avenir Next", sans-serif; }
+.page :global(h1), .page :global(h2), .page :global(h3), .page :global(p) { margin-top: 0; }
+.page :global(h2)::after { content: none; }
+.page :global(#skills), .page :global(#contact) { text-align: left; }
+.page :global(.container) { max-width: none; padding: 0; }
+
+.nav { position: fixed; inset: 0 0 auto; z-index: 10; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 max(24px, calc((100vw - 1080px) / 2)); border-bottom: 1px solid rgba(255,255,255,.07); background: rgba(11,15,20,.86); backdrop-filter: blur(16px); }
+.logo { color: var(--test-accent); font-size: 1.38rem; font-weight: 700; line-height: 1; letter-spacing: -.055em; text-decoration: none; }
+.logo span, .hero h1 span, .contact h2 span { color: var(--test-accent); }
+.navLinks { display: flex; gap: 28px; }
+.navLinks a { color: var(--test-muted); font-size: .72rem; font-weight: 600; letter-spacing: .025em; text-decoration: none; transition: color .2s ease; }
+.navLinks a:hover, .textLink:hover, .projectLink:hover, .email:hover { color: var(--test-text); }
+.shell { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+.page .hero { min-height: 480px; padding: 136px 0 72px; display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 80px; align-items: end; border-bottom: 1px solid rgba(255,255,255,.08); }
+.sectionKicker, .sectionCount { margin: 0; color: var(--test-accent); font-size: .65rem; font-weight: 600; line-height: 1.2; letter-spacing: .17em; text-transform: uppercase; }
+.hero h1 { margin: 18px 0 11px; font-size: clamp(3.7rem, 8vw, 7rem); line-height: .87; letter-spacing: -.065em; font-weight: 700; }
+.education { margin: 0; color: var(--test-warm); font-size: .82rem; font-weight: 500; line-height: 1.5; letter-spacing: .005em; }
+.education b { padding: 0 5px; color: var(--test-faint); }
+.intro { max-width: 420px; margin: 24px 0 30px; color: var(--test-muted); font-size: 1.02rem; font-weight: 400; line-height: 1.68; letter-spacing: -.012em; }
+.actions { display: flex; align-items: center; gap: 23px; }
+.primaryButton { display: inline-flex; align-items: center; gap: 10px; padding: 11px 15px; border: 1px solid var(--test-accent); color: #081116; background: var(--test-accent); font-size: .72rem; font-weight: 700; letter-spacing: .025em; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+.primaryButton:hover { transform: translateY(-2px); background: #7fbfdc; }
+.primaryButton i, .textLink i, .projectLink i, .email i { font-size: .65rem; }
+.textLink, .projectLink, .email { color: var(--test-accent); font-size: .74rem; font-weight: 600; letter-spacing: .01em; text-decoration: none; transition: color .2s ease; }
+.page .section { padding: 62px 0 0; }
+.sectionHeading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+.sectionCount { color: var(--test-faint); font-size: .6rem; font-weight: 500; }
+.projectList { border-top: 1px solid rgba(255,255,255,.08); }
+.projectRow { min-height: 104px; display: grid; grid-template-columns: 82px minmax(0, 1fr) auto; gap: 23px; align-items: center; border-bottom: 1px solid rgba(255,255,255,.08); }
+.imagePlaceholder { position: relative; width: 82px; height: 64px; display: grid; place-items: center; color: var(--test-accent); background: var(--test-panel); border: 1px solid rgba(94,166,201,.18); }
+.imagePlaceholder i { font-size: 1.25rem; opacity: .8; }
+.imagePlaceholder span { position: absolute; right: 6px; bottom: 4px; color: var(--test-faint); font-size: .58rem; }
+.projectInfo h2 { margin: 0 0 5px; color: var(--test-text); font-size: 1rem; font-weight: 650; line-height: 1.25; letter-spacing: -.025em; }
+.projectInfo p { max-width: 620px; margin: 0; color: var(--test-muted); font-size: .8rem; font-weight: 400; line-height: 1.55; letter-spacing: -.004em; }
+.projectLink { white-space: nowrap; }
+.page :global(#skills).skillsSection { padding: 72px 0 80px; }
+.skillList { display: flex; flex-wrap: wrap; gap: 8px; }
+.skillList span { min-width: 0; padding: 9px 12px; border: 1px solid rgba(255,255,255,.09); color: var(--test-muted); background: rgba(255,255,255,.025); font-size: .72rem; font-weight: 500; letter-spacing: .005em; overflow-wrap: anywhere; }
+.page :global(#contact).contact { width: 100%; padding: 68px 0 72px; border-top: 1px solid rgba(255,255,255,.08); }
+.page .contact h2 { display: block; width: 100%; margin: 18px 0 25px; font-size: clamp(2.7rem, 5.35vw, 4.7rem); font-weight: 700; line-height: .93; letter-spacing: -.06em; }
+.email { display: inline-flex; align-items: center; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--test-accent); font-size: .84rem; font-weight: 550; letter-spacing: -.005em; }
+.page .footer { width: 100%; min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 0; padding: 18px 0 26px; border-top: 1px solid rgba(255,255,255,.08); color: var(--test-faint); background: transparent; font-size: .62rem; font-weight: 500; line-height: 1.5; letter-spacing: .07em; text-align: left; }
+
+@media (max-width: 700px) {
+  .nav { padding: 0 18px; }
+  .navLinks { gap: 15px; }
+  .shell { width: min(100% - 36px, 520px); }
+  .page .hero { min-height: auto; padding: 112px 0 48px; display: block; }
+  .hero h1 { font-size: clamp(3.35rem, 18vw, 5.8rem); line-height: .89; letter-spacing: -.06em; }
+  .projectRow { grid-template-columns: 58px minmax(0, 1fr); gap: 14px; padding: 14px 0; }
+  .imagePlaceholder { width: 58px; height: 52px; }
+  .projectLink { grid-column: 2; margin-top: -8px; }
+  .projectInfo p { font-size: .76rem; line-height: 1.55; }
+  .page :global(#skills).skillsSection { padding: 54px 0 60px; }
+  .page :global(#contact).contact { padding: 52px 0 56px; }
+  .page .contact h2 { font-size: clamp(2.35rem, 12vw, 3.85rem); line-height: .96; letter-spacing: -.055em; }
+  .page .footer { align-items: flex-start; flex-direction: column; gap: 7px; padding: 17px 0 24px; }
+}
