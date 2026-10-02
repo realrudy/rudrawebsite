@@ -528,6 +528,18 @@ h2::after {
     margin-bottom: 2rem;
 }
 
+.email{
+color:var(--accent);
+font-weight: 700;
+transition:0.4s;
+}
+
+.email:hover{
+    color:var(--accent-hover);
+    cursor:pointer;
+    font-size:22px;
+}
+
 .skill-category h3 {
     color: var(--text-primary);
     margin-bottom: 2rem;
