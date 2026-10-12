@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071017">
+  <title>Resume / 2026 — Rudra Pandit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#0b0f14;--panel:#0f1720;--panel2:#141c24;--text:#f0f6fa;--muted:#b9c6d2;--cyan:#5ea6c9;--amber:#f8d98a;--paper:#f2eee8;--line:rgba(255,255,255,.08);--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:"Inter",sans-serif}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--sans)}button,input{font:inherit}button{cursor:pointer}
+    .app{min-height:100vh;display:grid;grid-template-rows:70px 1fr 38px;background:var(--bg);overflow:hidden}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 1rem;border-bottom:1px solid rgba(255,255,255,.03);background:rgba(8,10,12,.55);box-shadow:0 4px 18px rgba(0,0,0,.45);backdrop-filter:blur(8px);z-index:5}
+    .brand{display:flex;align-items:center;gap:14px}.mark{display:grid;place-items:center;width:31px;height:31px;border:0;color:var(--cyan);font:700 1.8rem var(--sans);letter-spacing:-.05em}.title{font:500 .95rem var(--sans);letter-spacing:.02em}.title span{color:var(--muted);font-weight:400}
+    .top-actions,.viewer-actions{display:flex;align-items:center;gap:6px}.status{display:flex;align-items:center;gap:8px;margin-right:14px;color:var(--muted);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber)}.status.ready .status-dot{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+    .icon-btn,.text-btn{border:1px solid transparent;background:transparent;color:var(--muted);min-height:30px;padding:0 9px;border-radius:2px;font-size:12px}.icon-btn:hover,.text-btn:hover,.icon-btn:focus-visible,.text-btn:focus-visible{border-color:var(--line);color:var(--text);background:rgba(109,227,220,.06);outline:none}.text-btn{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.icon{font-size:15px;line-height:1}    .main{display:grid;grid-template-columns:190px 1fr;min-height:0}.rail{padding:20px 14px;border-right:1px solid rgba(255,255,255,.06);background:var(--panel);overflow:auto}.eyebrow{display:flex;justify-content:space-between;color:var(--muted);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 4px 13px}.eyebrow strong{color:var(--cyan);font-weight:400}.thumbs{display:flex;flex-direction:column;gap:12px}.thumb{position:relative;border:1px solid rgba(255,255,255,.09);background:var(--paper);padding:5px;min-height:142px;color:#617079;transition:border-color .2s,transform .2s}.thumb:hover{border-color:var(--cyan);transform:translateY(-1px)}.thumb.active{border-color:var(--cyan);box-shadow:0 0 0 1px rgba(94,166,201,.18)}.thumb canvas{display:block;width:100%;height:auto;background:var(--paper)}.thumb-num{display:block;color:var(--muted);font:10px var(--mono);padding:6px 2px 0}.rail-empty{border:1px dashed rgba(255,255,255,.12);padding:16px 10px;color:var(--muted);font:10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em}.rail-empty button{display:block;margin-top:13px;padding:0;border:0;color:var(--cyan);background:none;font:inherit;text-decoration:underline}
+    .stage{position:relative;min-width:0;display:flex;flex-direction:column;background:var(--bg)}.canvas-wrap{position:relative;flex:1;min-height:0;overflow:auto;padding:38px 30px 94px;display:flex;justify-content:center;align-items:flex-start}.document{position:relative;display:none;background:var(--paper);box-shadow:0 18px 48px rgba(0,0,0,.45),0 0 0 1px rgba(242,238,232,.1);transform-origin:top center}.document.visible{display:block}.document canvas{display:block;max-width:none}.empty{position:absolute;inset:0;display:grid;place-items:center;padding:25px}.empty.hidden{display:none}.empty-card{width:min(455px,100%);padding:32px 30px;border:1px solid rgba(255,255,255,.08);background:var(--panel);box-shadow:0 20px 60px rgba(0,0,0,.18);text-align:center}.empty-kicker{color:var(--cyan);font:600 10px var(--mono);letter-spacing:.16em;text-transform:uppercase}.empty h1{font-size:27px;font-weight:600;letter-spacing:-.04em;margin:14px 0 9px}.empty p{margin:0 auto 22px;max-width:330px;color:var(--muted);font-size:13px;line-height:1.6}.empty p code{color:var(--amber);font-family:var(--mono);font-size:.9em}
+    .hud{position:absolute;bottom:23px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px;border:1px solid var(--line);background:rgba(14,26,35,.92);box-shadow:0 8px 28px rgba(0,0,0,.28);backdrop-filter:blur(9px);z-index:2}.hud-group{display:flex;align-items:center;gap:3px;border-right:1px solid var(--line);padding-right:8px}.hud-group:last-child{border:0;padding:0}.hud button{width:29px;height:27px;padding:0;border:0;background:transparent;color:var(--muted);font-size:16px}.hud button:hover{color:var(--cyan)}.page-input{width:34px;height:27px;border:1px solid var(--line);background:var(--bg);color:var(--text);text-align:center;font:11px var(--mono);outline:none}.page-total,.zoom-readout{color:var(--muted);font:10px var(--mono);padding:0 3px}.loading{position:absolute;inset:0;display:none;place-items:center;background:rgba(7,16,23,.45);z-index:3}.loading.show{display:grid}.loader{display:flex;align-items:center;gap:10px;color:var(--cyan);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.spinner{width:13px;height:13px;border:1px solid rgba(109,227,220,.3);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .helper{display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-top:1px solid var(--line);color:var(--muted);font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase}.helper kbd{padding:2px 4px;border:1px solid var(--line);color:var(--text);font:9px var(--mono);margin:0 2px}.error{display:none;margin-top:14px;color:#ffb3a7;font:11px/1.5 var(--mono)}.error.show{display:block}
+    .modal-backdrop{position:fixed;inset:0;display:none;place-items:center;background:rgba(3,9,13,.75);z-index:10}.modal-backdrop.open{display:grid}.modal{width:min(420px,calc(100% - 32px));padding:24px;border:1px solid var(--line);background:var(--panel);box-shadow:0 24px 70px rgba(0,0,0,.5)}.modal h2{font-size:16px;font-weight:500;margin:0 0 7px}.modal p{color:var(--muted);font-size:12px;margin:0 0 17px}.modal input{width:100%;height:38px;border:1px solid var(--line);background:var(--bg);color:var(--text);padding:0 11px;outline:none;font:12px var(--mono)}.modal input:focus{border-color:var(--cyan)}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px}
+    @media(max-width:720px){.app{grid-template-rows:57px 1fr 44px}.topbar{padding:0 13px;min-width:0;overflow:hidden}.brand{flex:0 0 auto}.title span{display:none}.status{display:none}.top-actions{flex:0 0 auto;margin-left:auto}.top-actions .text-btn{font-size:0;padding:0 7px}.top-actions .text-btn .icon{font-size:15px}.main{display:block}.rail{display:none}.canvas-wrap{padding:22px 12px 86px}.empty-card{padding:26px 19px}.empty h1{font-size:24px}.stage:has(.empty:not(.hidden)) .hud{display:none}.hud{bottom:19px;gap:3px;padding:5px;max-width:calc(100% - 20px)}.hud-group{padding-right:5px}.hud button{width:27px}.helper{padding:0 11px;font-size:8px}.helper .shortcuts{display:none}.document canvas{max-width:calc(100vw - 24px);height:auto!important}.thumbs{display:none}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="mark">RP</div><div class="title">Resume <span>/ 2026 </span></div></div>
+      <div class="top-actions">
+        <div class="status" id="status"><i class="status-dot"></i><span id="statusText">Connecting to resume.pdf</span></div>
+        <button class="icon-btn" id="fullscreenBtn" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
+      </div>
+    </header>
+    <main class="main">
+      <aside class="rail" aria-label="Document pages">
+        <p class="eyebrow"><span>Pages</span><strong id="railCount">—</strong></p>
+        <div id="thumbs" class="thumbs"><div class="rail-empty">Loading resume.pdf<span class="rail-hint">Your document will appear here.</span></div></div>
+      </aside>
+      <section class="stage" id="stage">
+        <div class="canvas-wrap" id="canvasWrap">
+          <div class="empty" id="empty">
+            <div class="empty-card">
+              <div class="empty-kicker">Resume / 2026</div>
+              <h1>Resume unavailable.</h1>
+              <p>Place your fixed PDF at <code>/resume.pdf</code>, then refresh this page to view it here.</p>
+              <div class="error" id="error" role="alert"></div>
+            </div>
+          </div>
+          <div class="loading" id="loading"><div class="loader"><i class="spinner"></i><span id="loadingText">Reading document</span></div></div>
+          <div class="document" id="document"><canvas id="pdfCanvas"></canvas></div>
+        </div>
+        <div class="hud" aria-label="Document controls">
+          <div class="hud-group"><button id="prevBtn" title="Previous page">‹</button><input class="page-input" id="pageInput" value="—" aria-label="Page number"><span class="page-total">/ <span id="pageTotal">—</span></span><button id="nextBtn" title="Next page">›</button></div>
+          <div class="hud-group"><button id="zoomOut" title="Zoom out">−</button><span class="zoom-readout" id="zoomReadout">100%</span><button id="zoomIn" title="Zoom in">+</button></div>
+          <div class="hud-group"><button id="fitBtn" title="Fit width">↔</button><button id="rotateBtn" title="Rotate page">↻</button></div>
+        </div>
+      </section>
+    </main>
+    <footer class="helper"><div class="shortcuts"><kbd>←</kbd><kbd>→</kbd> page <kbd>+</kbd><kbd>−</kbd> zoom <kbd>0</kbd> fit <kbd>F</kbd> fullscreen</div><div>Local by design · PDF.js viewer</div></footer>
+  </div>
+  <script type="module">
+    import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
+    const $=id=>document.getElementById(id);
+    const PDF_URL="/resume.pdf";
+    const state={pdf:null,page:1,scale:1,rotation:0,source:PDF_URL,fit:true};
+    const canvas=$("pdfCanvas"),ctx=canvas.getContext("2d");
+    function setStatus(text,ready=false){$("statusText").textContent=text;$("status").classList.toggle("ready",ready)}
+    function showError(message){$("error").textContent=message;$("error").classList.add("show");setStatus("Load error")}
+    function clearError(){$("error").classList.remove("show")}
+    function loading(show,text="Reading document"){$("loading").classList.toggle("show",show);$("loadingText").textContent=text}
+    function controls(enabled){["prevBtn","nextBtn","zoomOut","zoomIn","fitBtn","rotateBtn","pageInput"].forEach(id=>$(id).disabled=!enabled)}
+    async function loadDocument(source,label){
+      clearError();loading(true,"Opening document");controls(false);
+      try{
+        if(state.pdf)state.pdf.destroy();
+        state.source=source;const task=pdfjsLib.getDocument(typeof source==="string"?{url:source}: {data:source});
+        const pdf=await task.promise;state.pdf=pdf;state.page=1;state.scale=1;state.rotation=0;state.fit=false;
+        $("empty").classList.add("hidden");$("document").classList.add("visible");$("pageTotal").textContent=pdf.numPages;$("railCount").textContent=String(pdf.numPages).padStart(2,"0");$("pageInput").value=1;
+        setStatus(`Document ready · ${pdf.numPages} page${pdf.numPages===1?"":"s"}`,true);controls(true);await render();await renderThumbs();
+      }catch(err){console.error(err);$("empty").classList.remove("hidden");$("document").classList.remove("visible");showError(err?.message?.includes("CORS")?"This URL does not allow browser access (CORS). Try downloading the PDF first.":"Unable to open this PDF. Check that the file is valid and try again.");}
+      finally{loading(false)}
+    }
+    async function render(){
+      if(!state.pdf)return;loading(true,"Rendering page");
+      const page=await state.pdf.getPage(state.page);const base=page.getViewport({scale:1,rotation:state.rotation});
+      if(state.fit){const maxWidth=Math.min($("canvasWrap").clientWidth-60,900);state.scale=maxWidth/base.width}
+      const view=page.getViewport({scale:state.scale,rotation:state.rotation});const ratio=window.devicePixelRatio||1;
+      canvas.width=Math.floor(view.width*ratio);canvas.height=Math.floor(view.height*ratio);canvas.style.width=`${view.width}px`;canvas.style.height=`${view.height}px`;ctx.setTransform(ratio,0,0,ratio,0,0);
+      await page.render({canvasContext:ctx,viewport:view}).promise;$("zoomReadout").textContent=`${Math.round(state.scale*100)}%`;$("pageInput").value=state.page;document.querySelectorAll(".thumb").forEach((el,i)=>el.classList.toggle("active",i+1===state.page));loading(false)
+    }
+    async function renderThumbs(){const holder=$("thumbs");holder.innerHTML="";for(let i=1;i<=state.pdf.numPages;i++){const page=await state.pdf.getPage(i),view=page.getViewport({scale:.19});const item=document.createElement("button");item.className="thumb"+(i===1?" active":"");item.type="button";item.innerHTML=`<canvas width="${Math.ceil(view.width)}" height="${Math.ceil(view.height)}"></canvas><span class="thumb-num">PAGE ${String(i).padStart(2,"0")}</span>`;item.onclick=()=>{state.page=i;render()};holder.append(item);const c=item.querySelector("canvas");await page.render({canvasContext:c.getContext("2d"),viewport:view}).promise}}
+    $("prevBtn").onclick=()=>{if(state.pdf&&state.page>1){state.page--;render()}};$("nextBtn").onclick=()=>{if(state.pdf&&state.page<state.pdf.numPages){state.page++;render()}};$("pageInput").onchange=()=>{const p=Math.min(state.pdf?.numPages||1,Math.max(1,Number($("pageInput").value)||1));state.page=p;render()};
+    $("zoomIn").onclick=()=>{if(state.pdf){state.fit=false;state.scale=Math.min(3,state.scale+.1);render()}};
+    $("zoomOut").onclick=()=>{if(state.pdf){state.fit=false;state.scale=Math.max(.35,state.scale-.1);render()}};
+    $("fitBtn").onclick=()=>{if(state.pdf){state.fit=true;render()}};
+    $("rotateBtn").onclick=()=>{if(state.pdf){state.rotation=(state.rotation+90)%360;render()}};
+    $("fullscreenBtn").onclick=()=>document.fullscreenElement?document.exitFullscreen():$("stage").requestFullscreen?.();
+    document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.key==="ArrowLeft")$("prevBtn").click();if(e.key==="ArrowRight")$("nextBtn").click();if(e.key==="+")$("zoomIn").click();if(e.key==="-")$("zoomOut").click();if(e.key==="0")$("fitBtn").click();if(e.key.toLowerCase()==="f")$("fullscreenBtn").click()});
+    window.addEventListener("resize",()=>{if(state.pdf&&state.fit)render()});controls(false);loadDocument(PDF_URL,"resume.pdf");
+  </script>
+</body>
+</html>
